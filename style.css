@@ -1047,7 +1047,7 @@
 .services {
   margin-top: 140px;
   padding-bottom: 140px;
-  position: relative;
+  position: relativ
 }
 
 .service__item {
@@ -1084,17 +1084,25 @@
   text-align: center;
 }
 
-.up__button button {
+ .up__button {
   width: 46px;
   height: 46px;
   border-radius: 50%;
   border: none;
   background-color: #f5f5f5;
-  position: absolute;
-  right: 89px;
-  bottom: 32px;
+  position: fixed;
+  right: -80%;
+  bottom: 52px;
+  transition: all 0.3s ease;
 }
-.up__button button:hover {
+
+ .up__button.active{
+  display: flex;
+  align-items: center;
+  right: 89px;
+  justify-content: center;
+ }
+.up__button:hover {
   background-color: #ccc;
   cursor: pointer;
 }
