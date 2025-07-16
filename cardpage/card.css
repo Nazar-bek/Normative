@@ -229,7 +229,7 @@
   box-shadow: 0px 1px 13px 0px #0000000d;
   border-radius: 4px;
   margin-top: 40px;
-  padding: 29px 0;
+  padding: 29px 20px;
 }
 
 .card__position {
@@ -242,6 +242,22 @@
   position: relative;
   margin-left: 40px;
 }
+.paraga {
+  white-space: nowrap;
+}
+.card__counter {
+  white-space: nowrap;
+}
+
+.good_cart {
+  width: 48px;
+  height: 42px;
+}
+
+.img__Main {
+  width: 49px;
+  height: 42px;
+}
 .tv__icon {
   position: absolute;
   left: -10px;
@@ -249,11 +265,11 @@
 }
 
 .price__card {
-  margin-left: 189px;
+  margin-left: 140px;
 }
 
 .card__counter {
-  margin-left: 290px;
+  margin-left: 240px;
   display: flex;
   align-items: center;
   padding: 9px 15px;
@@ -268,6 +284,7 @@
   align-items: center;
   gap: 6px;
 }
+a
 
 .price__cardd {
   margin-left: 300px;
@@ -390,6 +407,8 @@
 .coupon__cards {
   display: flex;
   justify-content: space-between;
+  max-width: 1170px;
+  margin: 0 auto;
 }
 /*Footer styles*/
 .footer {
@@ -591,4 +610,3 @@
   letter-spacing: 0%;
   color: #3d3d3d;
 }
-

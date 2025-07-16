@@ -1413,3 +1413,8 @@
   fill: red;
   stroke: red;
 }
+
+.add.active {
+  background-color: gray;
+  color: white;
+}

@@ -152,9 +152,11 @@ const ratingImg = document.querySelector(".rating__img-modal");
 const ratingNumber = document.getElementById("rating_number-modal");
 const closeBtn = document.getElementById("close__modal");
 
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+let cart = JSON.parse(localStorage.getItem("addCart")) || [];
+
 function isInWishlist(product) {
-  return wishlist.some( item => item.id === product.id)
+  return wishlist.some((item) => item.id === product.id);
 }
 
 products.forEach((product) => {
@@ -212,25 +214,40 @@ products.forEach((product) => {
     document.body.style.overflow = "hidden";
   });
 
- 
-
-
   const likeBtn = productEl.querySelector(".like");
- isInWishlist(product) ? likeBtn.classList.add("active") : likeBtn.classList.remove("active")
-  likeBtn.addEventListener("click", () =>{
-    const index = wishlist.findIndex(item => item.id === product.id)
-    if(index === -1){
-      wishlist.push(product)
-      likeBtn.classList.add("active")
-    }else{
-      wishlist.splice(index, 1)
-      likeBtn.classList.remove("active")
+  isInWishlist(product)
+    ? likeBtn.classList.add("active")
+    : likeBtn.classList.remove("active");
+  likeBtn.addEventListener("click", () => {
+    const index = wishlist.findIndex((item) => item.id === product.id);
+    if (index === -1) {
+      wishlist.push(product);
+      likeBtn.classList.add("active");
+    } else {
+      wishlist.splice(index, 1);
+      likeBtn.classList.remove("active");
+}
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  });
+
+  const add = productEl.querySelector(".add");
+  const isInCart = cart.some((item) => item.id === product.id);
+  if (isInCart) {
+    add.textContent = "Added";
+  }
+  add.addEventListener("click", () => {
+    const indexCart = cart.findIndex((item) => item.id === product.id);
+    if (indexCart === -1) {
+      cart.push({ ...product, quantity: 1 });
+      add.textContent = "Added";
+      setTimeout(() => {
+        alert(`${product.name} successfully added!`);
+      }, 0);
+    } else {
+      alert(`${product.name} alerady in CartPage!`);
     }
-      localStorage.setItem("wishlist", JSON.stringify(wishlist))
-  })
-
-
-  
+    localStorage.setItem("addCart", JSON.stringify(cart));
+  });
 });
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
@@ -242,5 +259,3 @@ window.addEventListener("click", (e) => {
     document.body.style.overflow = "auto";
   }
 });
-
-
