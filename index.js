@@ -86,6 +86,7 @@ const products = [
     mainImg: "./assets/Chostik.png",
     name: "HAVIT HV-G92 Gamepad",
     price: 120,
+    changePrice: 120,
     prevPrice: 160,
     rating: "./assets/five_start.png",
     numberRating: 88,
@@ -96,6 +97,7 @@ const products = [
     mainImg: "./assets/key_board.png",
     name: "AK-900 Wired Keyboard",
     price: 960,
+    changePrice: 960,
     prevPrice: 1160,
     rating: "./assets/four_star.png",
     numberRating: 75,
@@ -106,6 +108,7 @@ const products = [
     mainImg: "./assets/Tv.png",
     name: "IPS LCD Gaming Monitor",
     price: 370,
+    changePrice: 370,
     prevPrice: 400,
     rating: "./assets/five_start.png",
     numberRating: 99,
@@ -116,6 +119,7 @@ const products = [
     mainImg: "./assets/chair.png",
     name: "S-Series Comfort Chair ",
     price: 375,
+    changePrice: 375,
     prevPrice: 400,
     rating: "./assets/four_star.png",
     numberRating: 99,
@@ -126,6 +130,7 @@ const products = [
     mainImg: "./assets/chair.png",
     name: "S-Series Comfort Chair ",
     price: 375,
+    changePrice: 375,
     prevPrice: 400,
     rating: "./assets/four_star.png",
     numberRating: 99,
@@ -136,6 +141,7 @@ const products = [
     mainImg: "./assets/chair.png",
     name: "S-Series Comfort Chair ",
     price: 375,
+     changePrice: 375,
     prevPrice: 400,
     rating: "./assets/four_star.png",
     numberRating: 99,
@@ -226,7 +232,7 @@ products.forEach((product) => {
     } else {
       wishlist.splice(index, 1);
       likeBtn.classList.remove("active");
-}
+    }
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   });
 
@@ -260,20 +266,19 @@ window.addEventListener("click", (e) => {
   }
 });
 
+const upBtn = document.querySelector(".up__button");
 
-const upBtn = document.querySelector(".up__button")
-
-window.addEventListener("scroll", () =>{
-  if(window.scrollY > 500){
-    upBtn.classList.add("active")
-  }else{
-    upBtn.classList.remove("active")
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    upBtn.classList.add("active");
+  } else {
+    upBtn.classList.remove("active");
   }
-})
+});
 
-upBtn.addEventListener("click",() =>{
+upBtn.addEventListener("click", () => {
   window.scrollTo({
-    top:0,
-    behavior: "smooth"
-  })
-})
+    top: 0,
+    behavior: "smooth",
+  });
+});
