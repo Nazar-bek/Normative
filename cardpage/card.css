@@ -262,14 +262,18 @@
   position: absolute;
   left: -10px;
   top: -10px;
+  white-space: nowrap;
 }
-
+.name_nam{
+  white-space: nowrap;
+  width: 120px;
+}
 .price__card {
-  margin-left: 150px;
+  margin-left: 145px;
 }
 
 .card__counter {
-  margin-left: 240px;
+  margin-left: 280px;
   display: flex;
   align-items: center;
   padding: 9px 15px;
@@ -609,4 +613,11 @@
   line-height: 24px;
   letter-spacing: 0%;
   color: #3d3d3d;
+}
+
+.up{
+  cursor: pointer;
+}
+.down{
+  cursor: pointer;
 }

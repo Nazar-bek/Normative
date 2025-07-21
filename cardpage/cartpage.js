@@ -9,7 +9,7 @@ if (addCartStaff.length === 0) {
   coverCart.style.alignItems = "center";
   coverCart.style.padding = "150px";
 } else {
-  addCartStaff.forEach((cart) => {
+  addCartStaff.forEach((cart, index) => {
     const mainCart = document.createElement("div");
     mainCart.classList.add("card__product");
     mainCart.innerHTML = `
@@ -17,11 +17,11 @@ if (addCartStaff.length === 0) {
                             <div class="tv__card">
                                 <img class="good_cart" src=".${cart.mainImg}" alt="${cart.name}">
                             </div>
-                            <p>${cart.name}</p>
+                            <p class="name_nam">${cart.name}</p>
                            </div>
                            <p class="price__card">$${cart.price}</p>
                            <div class="card__counter">
-                            <p>${cart.quantity}</p>
+                            <p>0${cart.quantity}</p>
                             <div class="icons__cards">
                                 <svg class="up" width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.75732 2.36666L1.45732 5.66666L0.514648 4.72399L4.75732 0.481323L8.99998 4.72399L8.05732 5.66666L4.75732 2.36666Z" fill="black"/>
@@ -34,8 +34,33 @@ if (addCartStaff.length === 0) {
                            <p class="price__cardd">$${cart.changePrice}</p>
                         </div>
         `;
-        
+    const loook = mainCart.querySelector(".up");
+    const quantityEl = mainCart.querySelector(".card__counter p");
+    const priceEl = mainCart.querySelector(".price__cardd");
+    const down = mainCart.querySelector(".down");
+    loook.addEventListener("click", () => {
+      addCartStaff[index].quantity += 1;
+     quantityEl.textContent = String(addCartStaff[index].quantity).padStart(
+          2,
+          "0"
+        );
+      const newTotal = cart.changePrice * addCartStaff[index].quantity;
+      priceEl.textContent = `$${newTotal}`;
+      localStorage.setItem("addCart", JSON.stringify(addCartStaff));
+    });
 
+    down.addEventListener("click", () => {
+      if (addCartStaff[index].quantity > 1) {
+        addCartStaff[index].quantity -= 1;
+        quantityEl.textContent = String(addCartStaff[index].quantity).padStart(
+          2,
+          "0"
+        );
+        const newtotal = cart.changePrice * addCartStaff[index].quantity;
+        priceEl.textContent = `$${newtotal}`;
+        localStorage.setItem("addCart", JSON.stringify(addCartStaff));
+      }
+    });
     coverCart.appendChild(mainCart);
   });
 }

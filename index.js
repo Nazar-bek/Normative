@@ -141,7 +141,7 @@ const products = [
     mainImg: "./assets/chair.png",
     name: "S-Series Comfort Chair ",
     price: 375,
-     changePrice: 375,
+    changePrice: 375,
     prevPrice: 400,
     rating: "./assets/four_star.png",
     numberRating: 99,
