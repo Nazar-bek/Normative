@@ -181,38 +181,38 @@
           <div class="inputs__profile">
             <div>
               <label class="main__label" for="name">First Name</label>
-            <input class="profile-input" type="text" placeholder="Md">
+            <input id="firstName" class="profile-input" type="text" placeholder="Md">
             </div>
            <div>
              <label class="main__label" for="lastName">Last Name</label>
-            <input class="profile-input" type="text" placeholder="Rimel">
+            <input id="lastName" class="profile-input" type="text" placeholder="Rimel">
            </div>
           </div>
            <div class="inputs__profile-next">
             <div>
               <label class="main__label" for="name">Email</label>
-            <input class="profile-input" type="text" placeholder="rimel1111@gmail.com">
+            <input id="email" class="profile-input" type="text" placeholder="rimel1111@gmail.com">
             </div>
            <div>
              <label class="main__label" for="lastName">Address</label>
-            <input class="profile-input" type="text" placeholder="Kingston, 5236, United State">
+            <input id="address" class="profile-input" type="text" placeholder="Kingston, 5236, United State">
            </div>
           </div>
           <div class="form__password-changes">
             <h3 class="profile-password-title">Password Changes</h3>
-            <input class="password__input" type="password" placeholder="Current Passwod">
-            <input class="password__input" type="password" placeholder="New Passwod">
-            <input class="password__input" type="password" placeholder="Confirm New Passwod">
+            <input autocomplete="new-password" id="currentPassword" class="password__input" type="password" placeholder="Current Passwod">
+            <input id="newPassword" class="password__input" type="password" placeholder="New Passwod">
+            <input  id="confirmPassword" class="password__input" type="password" placeholder="Confirm New Passwod">
           </div>
           <div class="profile__buttons">
             <button class="cancel__btn">Cancel</button>
-            <button class="save__btn">Save Changes</button>
+            <button type="submit" class="save__btn">Save Changes</button>
           </div>
          </form>
           </div>
          
          </div>
-      
+
         </section>
       </main>
             <footer class="footer">
@@ -337,5 +337,6 @@
           </div>
         </div>
     </footer>
+    <script src="./account.js"></script>
 </body>
 </html>

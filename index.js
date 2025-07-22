@@ -216,7 +216,9 @@ products.forEach((product) => {
     modalPrice.textContent = product.price;
     ratingImg.src = product.rating;
     ratingNumber.textContent = product.numberRating;
-    modal.style.display = "block";
+    modal.style.display = "flex";
+    modal.style.justifyContent = "center"
+    modal.style.alignItems = "center"
     document.body.style.overflow = "hidden";
   });
 
