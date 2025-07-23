@@ -219,7 +219,9 @@ products.forEach((product) => {
     modal.style.display = "flex";
     modal.style.justifyContent = "center"
     modal.style.alignItems = "center"
-    document.body.style.overflow = "hidden";
+     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.overflow = 'hidden';
+  document.body.style.paddingRight = `${scrollBarWidth}px`;
   });
 
   const likeBtn = productEl.querySelector(".like");
@@ -259,7 +261,8 @@ products.forEach((product) => {
 });
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
-  document.body.style.overflow = "auto";
+  document.body.style.overflow = '';
+  document.body.style.paddingRight = '';
 });
 window.addEventListener("click", (e) => {
   if (e.target === modal) {

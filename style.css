@@ -31,7 +31,9 @@
   align-items: center;
   gap: 8px;
 }
-
+.indicator{
+  cursor: pointer;
+}
 .navigation__buttons button:hover {
   background-color: #ccc;
 }
